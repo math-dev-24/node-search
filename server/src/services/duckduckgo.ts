@@ -1,7 +1,7 @@
 import { Result, Item } from "../../../packages/shared-types/result";
 import type { Query } from "../../../packages/shared-types/query";
-import * as cheerio from 'cheerio';
 import { SearchEngine } from '../interfaces/SearchEngine';
+import * as cheerio from 'cheerio';
 
 export class Duckduckgo implements SearchEngine {
     name = 'DuckDuckGo';
@@ -98,7 +98,7 @@ export class Duckduckgo implements SearchEngine {
                     if (!dateA) return 1;
                     if (!dateB) return -1;
                     
-                    return dateB.getTime() - dateA.getTime(); // Plus récent en premier
+                    return dateB.getTime() - dateA.getTime();
                 });
             }
 

@@ -15,6 +15,7 @@ export const useSearch = defineStore('search', () => {
     dateFilter: 'any',
     sortBy: 'relevance'
   })
+  const selectedEngine = ref<'duckduckgo' | 'brave' | 'both'>('duckduckgo')
   const result = ref<Item[]>([])
 
   const getSelectedBangs = (): Bang[] => {
@@ -49,6 +50,9 @@ export const useSearch = defineStore('search', () => {
     if (query.value.sortBy && query.value.sortBy !== 'relevance') {
       params.set('sortBy', query.value.sortBy);
     }
+
+    // Ajouter le moteur de recherche sélectionné
+    params.set('engine', selectedEngine.value);
 
     return `http://localhost:3001/search?${params.toString()}`;
   }
@@ -107,15 +111,21 @@ export const useSearch = defineStore('search', () => {
     }
   }
 
+  const setEngine = (engine: 'duckduckgo' | 'brave' | 'both'): void => {
+    selectedEngine.value = engine;
+  }
+
   return {
     inLoading,
     isLoaded,
     query,
     result,
+    selectedEngine,
     goSearch,
     toggleBang,
     clearBangs,
     getSelectedBangs,
-    hasRedirectBangs
+    hasRedirectBangs,
+    setEngine
   }
 })

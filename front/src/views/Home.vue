@@ -57,10 +57,12 @@ const handleKeyPress = (event: KeyboardEvent) => {
       :sort-by="store.query.sortBy || 'relevance'"
       :has-redirect-bangs="store.hasRedirectBangs()"
       :close-accordions="closeAccordions"
+      :selected-engine="store.selectedEngine"
       @toggle-bang="store.toggleBang"
       @clear-bangs="store.clearBangs"
       @update-date-filter="store.query.dateFilter = $event"
       @update-sort-by="store.query.sortBy = $event"
+      @update-engine="store.setEngine"
     />
   </div>
 
