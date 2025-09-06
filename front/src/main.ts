@@ -6,6 +6,7 @@ import Aura from '@primeuix/themes/aura';
 
 import App from './App.vue'
 import router from './router'
+import "./main.css"
 
 const app = createApp(App)
 

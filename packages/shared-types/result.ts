@@ -7,5 +7,7 @@ export type Item = {
     title: string,
     url: string,
     description: string,
-    engine: string
+    engine: string,
+    publishedDate?: Date | null,
+    extractedDate?: Date | null
 }
