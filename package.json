@@ -1,0 +1,20 @@
+{
+  "name": "personal-search-app",
+  "version": "1.0.0",
+  "description": "Moteur de recherche personnalisé Vue.js + Node.js",
+  "scripts": {
+    "dev": "pnpm --parallel --recursive run dev",
+    "build": "pnpm --recursive run build",
+    "start": "pnpm --filter server start",
+    "dev:server": "pnpm --filter server dev",
+    "dev:client": "pnpm --filter client dev",
+    "install:all": "pnpm install && pnpm --recursive install",
+    "clean": "pnpm --recursive run clean"
+  },
+  "keywords": ["search", "vue", "typescript", "node"],
+  "author": "Toi",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}
