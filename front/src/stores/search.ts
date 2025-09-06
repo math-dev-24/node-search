@@ -10,9 +10,11 @@ export const useSearch = defineStore('search', () => {
 
   const goSearch = (): void => {
     try {
-      fetch(`http://localhost:8080/search?search=${query.value.search}`)
+      console.log("send" , query.value.search)
+      fetch(`http://localhost:3001/search?query=${encodeURIComponent(query.value.search)}`)
         .then(response => response.json())
         .then(data => {
+          console.log(data)
           result.value = data.datas
         })
     } catch (error) {

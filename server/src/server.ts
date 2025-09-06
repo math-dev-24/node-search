@@ -20,6 +20,22 @@ app.use(express.json)
 
 app.get('/', (req, res) => res.send('Hello World!'));
 
+app.use("/search", (req, res) => {
+    const query = req.query.query as string;
+
+    res.json({
+        datas: [
+            {
+                id: 1,
+                title: "Titre 1",
+                description: "Description 1",
+                image: "https://picsum.photos/200/300",
+                link: "https://www.google.com"
+            }
+        ]
+    })
+})
+
 
 
 app.use('*', (req, res) => res.status(404).send('Not Found') );
